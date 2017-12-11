@@ -67,3 +67,7 @@ void getSumEachRow(int myList[][COL_SIZE], int numOfRows) {
 		sum = 0;
 	}
 }
+
+// get sum by column
+
+// get sum of each individual column
