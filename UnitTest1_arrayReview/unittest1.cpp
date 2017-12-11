@@ -5,15 +5,30 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+const int NUM_ROW = 5;
+const int NUM_COL = 3;
+
+int multiDimList_test[][NUM_COL] = { { 1,2,3 },
+{ 4,5,6 },
+{ 7,8,9 },
+{ 10,11,12 },
+{ 13,14,15 } };
+
+
+
 namespace UnitTest1_arrayReview
 {		
+	
 	TEST_CLASS(UnitTest1)
 	{
 	public:
 		
-		TEST_METHOD(test_sum)
-		{
+		TEST_METHOD(test_sum) {
 			Assert::AreEqual(testSum(3, 3), 6);
+		}
+
+		TEST_METHOD(check_sum_by_row) {
+			Assert::AreEqual(sumByRow(multiDimList_test, 2), 24.0);
 		}
 
 	};

@@ -15,12 +15,25 @@ const int NUM_COL = 3;
 int main()
 {
 	char p;
-	int sum;
+	int sum, rowToSum;
 	int theList[NUM_ROW];
+	int multiDimList[][NUM_COL] = { {1,2,3},
+							        {4,5,6},
+							        {7,8,9},
+							        {10,11,12},
+							        {13,14,15} };
 
-	cout << "enter " << NUM_ROW << " integers:" << endl;
-	fillArray(theList, NUM_ROW);
-	dispArray(theList, NUM_ROW);
+
+	double arrayAverage, sumRow;
+
+	rowToSum = 2;
+	dispArray(multiDimList, NUM_ROW);
+	sumRow = sumByRow(multiDimList, rowToSum);
+	cout << endl;
+	cout << "the sum of row " << rowToSum << " is = " << sumRow;
+
+	cout << endl << endl;
+	getSumEachRow(multiDimList, NUM_ROW);
 
 	cout << endl;
 	cout << "press any key! " << endl;
