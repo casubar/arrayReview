@@ -6,17 +6,21 @@
 
 #include "arrayReview_Header.h"
 
-
 using namespace std;
+
+const int NUM_ROW = 5;
+const int NUM_COL = 3;
+
 
 int main()
 {
 	char p;
 	int sum;
+	int theList[NUM_ROW];
 
-	sum = testSum(3, 3);
-	cout << "sum is = " << sum;
-
+	cout << "enter " << NUM_ROW << " integers:" << endl;
+	fillArray(theList, NUM_ROW);
+	dispArray(theList, NUM_ROW);
 
 	cout << endl;
 	cout << "press any key! " << endl;
