@@ -33,7 +33,13 @@ int main()
 	cout << "the sum of row " << rowToSum << " is = " << sumRow;
 
 	cout << endl << endl;
+	cout << "the sum of individual rows:";
+	cout << endl;
 	getSumEachRow(multiDimList, NUM_ROW);
+	
+	cout << endl;
+	cout << "the sum of individual columns";
+	getSumOfIndividualColumn(multiDimList, ROW_SIZE);
 
 	cout << endl;
 	cout << "press any key! " << endl;

@@ -6,7 +6,7 @@ const int ROW_SIZE = 5;
 const int COL_SIZE = 3;
 
 
-int testSum(int a, int b) {
+double testSum(int a, int b) {
 	return a + b;
 }
 
@@ -69,5 +69,28 @@ void getSumEachRow(int myList[][COL_SIZE], int numOfRows) {
 }
 
 // get sum by column
+double getSumByColumn(int myList[][COL_SIZE], int colToGetSum, int numOfRows) {
+	double sum;
+
+	sum = 0;
+	for (int row = 0; row < numOfRows; row++) {
+		sum = sum + myList[row][colToGetSum];
+	}
+	return sum;
+}
+
 
 // get sum of each individual column
+void getSumOfIndividualColumn(int myList[][COL_SIZE], int numOfRows) {
+	double sum;
+
+	sum = 0;
+	for (int col = 0; col < COL_SIZE; col++) {
+		for (int row = 0; row < numOfRows; row++) {
+			sum = sum + myList[row][col];
+		}
+		std::cout << std::endl;
+		std::cout << sum;
+		sum = 0;
+	}
+}

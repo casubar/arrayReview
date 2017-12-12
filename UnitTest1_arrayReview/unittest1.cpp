@@ -24,11 +24,15 @@ namespace UnitTest1_arrayReview
 	public:
 		
 		TEST_METHOD(test_sum) {
-			Assert::AreEqual(testSum(3, 3), 6);
+			Assert::AreEqual(testSum(3, 3), 6.0);
 		}
 
 		TEST_METHOD(check_sum_by_row) {
 			Assert::AreEqual(sumByRow(multiDimList_test, 2), 24.0);
+		}
+
+		TEST_METHOD(check_sum_by_column) {
+			Assert::AreEqual(getSumByColumn(multiDimList_test, 1, NUM_ROW), 40.0);
 		}
 
 	};
