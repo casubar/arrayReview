@@ -14,6 +14,13 @@ int multiDimList_test[][NUM_COL] = { { 1,2,3 },
 { 10,11,12 },
 { 13,14,15 } };
 
+int secondList_test[][NUM_COL] = { 
+{ 21,32,61 },
+{ 42,11,23 },
+{ 17,28,59 },
+{ 10,53,12 },
+{ 31,14,15 } };
+
 
 
 namespace UnitTest1_arrayReview
@@ -46,5 +53,16 @@ namespace UnitTest1_arrayReview
 			Assert::AreEqual(checkColTwo(multiDimList_test, NUM_ROW), 45.0);
 		}
 
+		TEST_METHOD(check_largest_row_zero_element) {
+			Assert::AreEqual(largestRowElement(secondList_test, NUM_ROW, 0), 42.0);
+		}
+
+		TEST_METHOD(check_largest_row_one_element) {
+			Assert::AreEqual(largestRowElement(secondList_test, NUM_ROW, 1), 53.0);
+		}
+
+		TEST_METHOD(check_largest_row_two_element) {
+			Assert::AreEqual(largestRowElement(secondList_test, NUM_ROW, 2), 61.0);
+		}
 	};
 }
