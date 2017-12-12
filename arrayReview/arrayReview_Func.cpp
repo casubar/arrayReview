@@ -94,3 +94,38 @@ void getSumOfIndividualColumn(int myList[][COL_SIZE], int numOfRows) {
 		sum = 0;
 	}
 }
+
+// check sum column 0; myList[][0]
+double checkColZero(int myList[][COL_SIZE], int numOfRows) {
+	double sumColZero;
+	int col = 0;
+
+	sumColZero = 0;
+	for (int row = 0; row < numOfRows; row++) {
+		sumColZero = sumColZero + myList[row][col];
+	}
+	return sumColZero;
+}
+
+// check sum column 1; myList[][1]
+double checkColOne(int myList[][COL_SIZE], int numOfRows) {
+	double sumColOne = 0;
+	int col = 1;
+
+	for (int row = 0; row < numOfRows; row++) {
+		sumColOne = sumColOne + myList[row][col];
+	}
+	return sumColOne;
+}
+
+// check sum column 2: myList[][2]
+double checkColTwo(int myList[][COL_SIZE], int numOfRows) {
+	double sumColTwo = 0;
+	int col = 2;
+
+	for (int row = 0; row < numOfRows; row++) {
+		sumColTwo = sumColTwo + myList[row][col];
+	}
+	return sumColTwo;
+}
+
