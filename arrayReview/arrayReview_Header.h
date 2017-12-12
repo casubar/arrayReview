@@ -26,3 +26,9 @@ double getSumByColumn(int myList[][COL_SIZE], int colToGetSum, int numOfRows);
 
 // get sum of each individual column
 void getSumOfIndividualColumn(int myList[][COL_SIZE], int numOfRows);
+// check sum of each individual column
+double checkColZero(int myList[][COL_SIZE], int numOfRows);
+// check sum column 1; myList[][1]
+double checkColOne(int myList[][COL_SIZE], int numOfRows);
+// check sum column 2: myList[][2]
+double checkColTwo(int myList[][COL_SIZE], int numOfRows);
