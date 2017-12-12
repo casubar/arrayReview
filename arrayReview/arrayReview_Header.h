@@ -4,7 +4,7 @@ const int ROW_SIZE = 5;
 const int COL_SIZE = 3;
 
 
-int testSum(int a, int b);
+double testSum(int a, int b);
 
 // fill array
 void fillArray(int myList[], int size);
@@ -20,3 +20,9 @@ double sumByRow(int myList[][COL_SIZE], int rowToGetSum);
 
 // get sum of each individual row
 void getSumEachRow(int myList[][COL_SIZE], int numOfRows);
+
+// get sum by column
+double getSumByColumn(int myList[][COL_SIZE], int colToGetSum, int numOfRows);
+
+// get sum of each individual column
+void getSumOfIndividualColumn(int myList[][COL_SIZE], int numOfRows);
