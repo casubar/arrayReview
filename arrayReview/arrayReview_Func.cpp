@@ -128,3 +128,4 @@ double checkColTwo(int myList[][COL_SIZE], int numOfRows) {
 	}
 	return sumColTwo;
 }
+
