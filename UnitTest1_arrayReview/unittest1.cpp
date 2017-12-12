@@ -35,5 +35,16 @@ namespace UnitTest1_arrayReview
 			Assert::AreEqual(getSumByColumn(multiDimList_test, 1, NUM_ROW), 40.0);
 		}
 
+		TEST_METHOD(check_sum_of_individual_column_0) {
+			Assert::AreEqual(checkColZero(multiDimList_test, NUM_ROW), 35.0);
+		}
+
+		TEST_METHOD(check_sum_of_individual_column_1) {
+			Assert::AreEqual(checkColOne(multiDimList_test, NUM_ROW), 40.0);
+		}
+		TEST_METHOD(check_sum_of_individual_column_2) {
+			Assert::AreEqual(checkColTwo(multiDimList_test, NUM_ROW), 45.0);
+		}
+
 	};
 }
