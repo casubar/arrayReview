@@ -10,7 +10,6 @@ double testSum(int a, int b) {
 	return a + b;
 }
 
-
 // fill array (user input)
 void fillArray(int myList[], int size) {
 	for (int list = 0; list < size; list++) {
@@ -27,7 +26,6 @@ void dispArray(int myList[][COL_SIZE], int numOfRows) {
 		std::cout << std::endl;
 	}
 }
-
 
 // get list average (one dimension array)
 double listAverage(int myList[], int size) {
@@ -78,7 +76,6 @@ double getSumByColumn(int myList[][COL_SIZE], int colToGetSum, int numOfRows) {
 	}
 	return sum;
 }
-
 
 // get sum of each individual column
 void getSumOfIndividualColumn(int myList[][COL_SIZE], int numOfRows) {
