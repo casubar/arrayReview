@@ -129,23 +129,18 @@ double checkColTwo(int myList[][COL_SIZE], int numOfRows) {
 	return sumColTwo;
 }
 
-//------------------------------------------------------------------------
+//=====================================================================================
 
 // largest element in the individual column
 double getLargestColumnElement(int myList[][COL_SIZE], int numOfRows, int colToFind) {
 	double temp;
-	int largest, maxIndex, col;
 
 	temp = 0;
-	largest = temp;
-	maxIndex = 0;
-	
 	for (int row = 0; row < numOfRows; row++) {
 		// is myList[row][col] > myList[row + 1][0] && myList[row][col] >= temp
 		if (myList[row][colToFind] > myList[row + 1][colToFind] && myList[row][colToFind] >= temp) {
 			// if true
 			// temp = myList[row][col]
-			maxIndex = row;
 			temp = myList[row][colToFind];
 		}
 	}
@@ -200,3 +195,4 @@ void getLargestElementEachColumn(int myList[][COL_SIZE], int numOfRows) {
 		std::cout << std::endl;
 	}
 }
+

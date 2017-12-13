@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include "../arrayReview/arrayReview_Header.h"
+#include "../arrayReview/header_arrayReview.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
