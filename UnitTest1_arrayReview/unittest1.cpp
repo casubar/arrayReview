@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include "../arrayReview/arrayReview_Header.h"
+#include "../arrayReview/header_arrayReview.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -80,5 +80,6 @@ namespace UnitTest1_arrayReview
 		TEST_METHOD(check_largest_row_element_4) {
 			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 4), 31.0);
 		}
+		
 	};
 }

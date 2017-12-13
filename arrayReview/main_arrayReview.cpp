@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 
-#include "arrayReview_Header.h"
+#include "header_arrayReview.h"
 
 using namespace std;
 
@@ -66,12 +66,21 @@ int main()
 	// largest column element
 	cout << endl;
 	cout << "Find the largest element in any column" << endl;
-	cout << "Enter column number: ";
+	cout << "Enter column number [1-3]: ";
 	cin >> columnToGetLargest;
 	// get largest column
 	largestElementColumn = getLargestColumnElement(list_two, NUM_ROW, columnToGetLargest -1);
 	// print message of the largest element on the chosen column
 	cout << "Largest element in column " << columnToGetLargest << " is = " << largestElementColumn << endl;
+
+	cout << endl;
+	// display all largest element in each row and column
+	cout << "Largest element in all row:" << endl;
+	getLargestElementEachRow(list_two, NUM_ROW);
+	cout << endl;
+	cout << "Largest element in all column:" << endl;
+	getLargestElementEachColumn(list_two, NUM_ROW);
+
 
 	cout << endl;
 	cout << "press any key! " << endl;

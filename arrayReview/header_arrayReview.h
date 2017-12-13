@@ -33,9 +33,13 @@ double checkColOne(int myList[][COL_SIZE], int numOfRows);
 // check sum column 2: myList[][2]
 double checkColTwo(int myList[][COL_SIZE], int numOfRows);
 
-//------------------------------------------------------------------------
-
+//===================================================================================
 // largest element in the individual column
 double getLargestColumnElement(int myList[][COL_SIZE], int numOfRows, int colToFind);
 // largest element in the individual row
 double getLargestRowElement(int myList[][COL_SIZE], int numOfRows, int rowToFind);
+// largest element in each row
+void getLargestElementEachRow(int myList[][COL_SIZE], int numOfRows);
+// largest element in each column
+void getLargestElementEachColumn(int myList[][COL_SIZE], int numOfRows);
+

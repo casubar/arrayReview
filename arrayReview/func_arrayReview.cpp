@@ -10,7 +10,6 @@ double testSum(int a, int b) {
 	return a + b;
 }
 
-
 // fill array (user input)
 void fillArray(int myList[], int size) {
 	for (int list = 0; list < size; list++) {
@@ -27,7 +26,6 @@ void dispArray(int myList[][COL_SIZE], int numOfRows) {
 		std::cout << std::endl;
 	}
 }
-
 
 // get list average (one dimension array)
 double listAverage(int myList[], int size) {
@@ -79,7 +77,6 @@ double getSumByColumn(int myList[][COL_SIZE], int colToGetSum, int numOfRows) {
 	return sum;
 }
 
-
 // get sum of each individual column
 void getSumOfIndividualColumn(int myList[][COL_SIZE], int numOfRows) {
 	double sum;
@@ -129,23 +126,18 @@ double checkColTwo(int myList[][COL_SIZE], int numOfRows) {
 	return sumColTwo;
 }
 
-//------------------------------------------------------------------------
+//=====================================================================================
 
 // largest element in the individual column
 double getLargestColumnElement(int myList[][COL_SIZE], int numOfRows, int colToFind) {
 	double temp;
-	int largest, maxIndex, col;
 
 	temp = 0;
-	largest = temp;
-	maxIndex = 0;
-	
 	for (int row = 0; row < numOfRows; row++) {
 		// is myList[row][col] > myList[row + 1][0] && myList[row][col] >= temp
 		if (myList[row][colToFind] > myList[row + 1][colToFind] && myList[row][colToFind] >= temp) {
 			// if true
 			// temp = myList[row][col]
-			maxIndex = row;
 			temp = myList[row][colToFind];
 		}
 	}
@@ -166,3 +158,38 @@ double getLargestRowElement(int myList[][COL_SIZE], int numOfRows, int rowToFind
 	}
 	return largestElement;	
 }
+
+// largest element in each row
+void getLargestElementEachRow(int myList[][COL_SIZE], int numOfRows) {
+	double largest;
+
+	for (int row = 0; row < numOfRows; row++) {
+		// assume the first element is the largest
+		largest = myList[row][0];
+		for (int col = 1; col < COL_SIZE; col++) {
+			if (myList[row][col] > largest) {
+				largest = myList[row][col];
+			}
+		}
+		std::cout << "Row " << row + 1 << " is = " << largest;
+		std::cout << std::endl;
+	}
+}
+
+// largest element in each column
+void getLargestElementEachColumn(int myList[][COL_SIZE], int numOfRows) {
+	double largest;
+
+	for (int col = 0; col < COL_SIZE; col++) {
+		// assume the first element is the largest
+		largest = myList[0][col];
+		for (int row = 1; row < numOfRows; row++) {
+			if (myList[row][col] > largest) {
+				largest = myList[row][col];
+			}
+		}
+		std::cout << "Column " << col + 1 << " is = " << largest;
+		std::cout << std::endl;
+	}
+}
+
