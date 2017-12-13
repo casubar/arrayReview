@@ -74,6 +74,14 @@ int main()
 	cout << "Largest element in column " << columnToGetLargest << " is = " << largestElementColumn << endl;
 
 	cout << endl;
+	// display all largest element in each row and column
+	cout << "Largest element in all row:" << endl;
+	getLargestElementEachRow(list_two, NUM_ROW);
+	cout << endl;
+	cout << "Largest element in all column:" << endl;
+	getLargestElementEachColumn(list_two, NUM_ROW);
+
+	cout << endl;
 	cout << "press any key! " << endl;
 	cin >> p;
     return 0;

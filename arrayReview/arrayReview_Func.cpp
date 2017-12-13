@@ -166,3 +166,37 @@ double getLargestRowElement(int myList[][COL_SIZE], int numOfRows, int rowToFind
 	}
 	return largestElement;	
 }
+
+// largest element in each row
+void getLargestElementEachRow(int myList[][COL_SIZE], int numOfRows) {
+	double largest;
+
+	for (int row = 0; row < numOfRows; row++) {
+		// assume the first element is the largest
+		largest = myList[row][0];
+		for (int col = 1; col < COL_SIZE; col++) {
+			if (myList[row][col] > largest) {
+				largest = myList[row][col];
+			}
+		}
+		std::cout << "Row " << row + 1 << " is = " << largest;
+		std::cout << std::endl;
+	}
+}
+
+// largest element in each column
+void getLargestElementEachColumn(int myList[][COL_SIZE], int numOfRows) {
+	double largest;
+
+	for (int col = 0; col < COL_SIZE; col++) {
+		// assume the first element is the largest
+		largest = myList[0][col];
+		for (int row = 1; row < numOfRows; row++) {
+			if (myList[row][col] > largest) {
+				largest = myList[row][col];
+			}
+		}
+		std::cout << "Column " << col + 1 << " is = " << largest;
+		std::cout << std::endl;
+	}
+}
