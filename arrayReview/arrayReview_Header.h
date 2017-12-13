@@ -35,5 +35,7 @@ double checkColTwo(int myList[][COL_SIZE], int numOfRows);
 
 //------------------------------------------------------------------------
 
+// largest element in the individual column
+double getLargestColumnElement(int myList[][COL_SIZE], int numOfRows, int colToFind);
 // largest element in the individual row
-double largestRowElement(int myList[][COL_SIZE], int numOfRows, int colToFind);
+double getLargestRowElement(int myList[][COL_SIZE], int numOfRows, int rowToFind);

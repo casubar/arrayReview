@@ -8,7 +8,8 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 const int NUM_ROW = 5;
 const int NUM_COL = 3;
 
-int multiDimList_test[][NUM_COL] = { { 1,2,3 },
+int multiDimList_test[][NUM_COL] = {
+{ 1,2,3 },
 { 4,5,6 },
 { 7,8,9 },
 { 10,11,12 },
@@ -54,15 +55,30 @@ namespace UnitTest1_arrayReview
 		}
 
 		TEST_METHOD(check_largest_row_zero_element) {
-			Assert::AreEqual(largestRowElement(secondList_test, NUM_ROW, 0), 42.0);
+			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 0), 42.0);
 		}
 
 		TEST_METHOD(check_largest_row_one_element) {
-			Assert::AreEqual(largestRowElement(secondList_test, NUM_ROW, 1), 53.0);
+			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 1), 53.0);
 		}
 
 		TEST_METHOD(check_largest_row_two_element) {
-			Assert::AreEqual(largestRowElement(secondList_test, NUM_ROW, 2), 61.0);
+			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 2), 61.0);
+		}
+		TEST_METHOD(check_largest_row_element_0) {
+			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 0), 61.0);
+		}
+		TEST_METHOD(check_largest_row_element_1) {
+			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 1), 42.0);
+		}
+		TEST_METHOD(check_largest_row_element_2) {
+			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 2), 59.0);
+		}
+		TEST_METHOD(check_largest_row_element_3) {
+			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 3), 53.0);
+		}
+		TEST_METHOD(check_largest_row_element_4) {
+			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 4), 31.0);
 		}
 	};
 }

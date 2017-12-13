@@ -131,8 +131,8 @@ double checkColTwo(int myList[][COL_SIZE], int numOfRows) {
 
 //------------------------------------------------------------------------
 
-// largest element in the individual row
-double largestRowElement(int myList[][COL_SIZE], int numOfRows, int colToFind) {
+// largest element in the individual column
+double getLargestColumnElement(int myList[][COL_SIZE], int numOfRows, int colToFind) {
 	double temp;
 	int largest, maxIndex, col;
 
@@ -150,4 +150,19 @@ double largestRowElement(int myList[][COL_SIZE], int numOfRows, int colToFind) {
 		}
 	}
 	return temp;	
+}
+
+// largest element in the individual row
+double getLargestRowElement(int myList[][COL_SIZE], int numOfRows, int rowToFind) {
+	double largestElement;
+
+	largestElement = 0;
+
+	for (int col = 0; col < COL_SIZE; col++) {
+		//if myList[row][col] > myList[row][col + 1] && myList[row][col] >= largestElement
+		if (myList[rowToFind][col] > myList[rowToFind][col + 1] && myList[rowToFind][col + 1] >= largestElement) {
+			largestElement = myList[rowToFind][col];
+		}
+	}
+	return largestElement;	
 }
