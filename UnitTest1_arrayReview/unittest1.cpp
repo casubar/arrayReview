@@ -22,6 +22,8 @@ int secondList_test[][NUM_COL] = {
 { 10,53,12 },
 { 31,14,15 } };
 
+int thirdList_test[NUM_ROW] = 
+{52,23,34,65,86};
 
 
 namespace UnitTest1_arrayReview
@@ -35,51 +37,57 @@ namespace UnitTest1_arrayReview
 			Assert::AreEqual(testSum(3, 3), 6.0);
 		}
 
-		TEST_METHOD(check_sum_by_row) {
-			Assert::AreEqual(sumByRow(multiDimList_test, 2), 24.0);
+		TEST_METHOD(sum_by_row) {
+			Assert::AreEqual(sumByRow(multiDimList_test, 2), 15.0);
 		}
 
-		TEST_METHOD(check_sum_by_column) {
+		TEST_METHOD(sum_by_column) {
 			Assert::AreEqual(getSumByColumn(multiDimList_test, 1, NUM_ROW), 40.0);
 		}
 
-		TEST_METHOD(check_sum_of_individual_column_0) {
+		TEST_METHOD(sum_individual_column_0) {
 			Assert::AreEqual(checkColZero(multiDimList_test, NUM_ROW), 35.0);
 		}
 
-		TEST_METHOD(check_sum_of_individual_column_1) {
+		TEST_METHOD(sum_individual_column_1) {
 			Assert::AreEqual(checkColOne(multiDimList_test, NUM_ROW), 40.0);
 		}
-		TEST_METHOD(check_sum_of_individual_column_2) {
+		TEST_METHOD(sum_individual_column_2) {
 			Assert::AreEqual(checkColTwo(multiDimList_test, NUM_ROW), 45.0);
 		}
 
-		TEST_METHOD(check_largest_row_zero_element) {
-			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 0), 42.0);
+		TEST_METHOD(largest_row_0_element) {
+			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 1), 42.0);
 		}
 
-		TEST_METHOD(check_largest_row_one_element) {
-			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 1), 53.0);
+		TEST_METHOD(largest_row_1_element) {
+			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 2), 53.0);
 		}
 
-		TEST_METHOD(check_largest_row_two_element) {
-			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 2), 61.0);
+		TEST_METHOD(largest_row_2_element) {
+			Assert::AreEqual(getLargestColumnElement(secondList_test, NUM_ROW, 3), 61.0);
 		}
-		TEST_METHOD(check_largest_row_element_0) {
+		TEST_METHOD(largest_row_element_0) {
 			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 0), 61.0);
 		}
-		TEST_METHOD(check_largest_row_element_1) {
+		TEST_METHOD(largest_row_element_1) {
 			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 1), 42.0);
 		}
-		TEST_METHOD(check_largest_row_element_2) {
+		TEST_METHOD(largest_row_element_2) {
 			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 2), 59.0);
 		}
-		TEST_METHOD(check_largest_row_element_3) {
+		TEST_METHOD(largest_row_element_3) {
 			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 3), 53.0);
 		}
-		TEST_METHOD(check_largest_row_element_4) {
+		TEST_METHOD(largest_row_element_4) {
 			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 4), 31.0);
 		}
-		
+		TEST_METHOD(seq_search_53) {
+			Assert::AreEqual(seqSearch(secondList_test, NUM_ROW, 53, 1), 3);
+		}
+		TEST_METHOD(seq_search_23) {
+			Assert::AreEqual(seqSearch(secondList_test, NUM_ROW, 23, 2), 1);
+		}
+	
 	};
 }
