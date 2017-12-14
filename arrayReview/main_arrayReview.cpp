@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 
+
 #include "header_arrayReview.h"
 
 using namespace std;
@@ -28,6 +29,7 @@ int main()
 		{ 17,28,59 },
 		{ 10,53,12 },
 		{ 31,14,15 } };
+
 
 	char p;
 	int sum, rowToSum, rowToGetLargest, columnToGetLargest;
@@ -80,6 +82,10 @@ int main()
 	cout << endl;
 	cout << "Largest element in all column:" << endl;
 	getLargestElementEachColumn(list_two, NUM_ROW);
+
+	
+	
+	
 
 
 	cout << endl;
