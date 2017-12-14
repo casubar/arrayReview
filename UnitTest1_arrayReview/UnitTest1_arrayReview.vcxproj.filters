@@ -21,7 +21,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\arrayReview\arrayReview_Header.h">
+    <ClInclude Include="..\arrayReview\header_arrayReview.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +32,7 @@
     <ClCompile Include="unittest1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\arrayReview\arrayReview_Func.cpp">
+    <ClCompile Include="..\arrayReview\func_arrayReview.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
