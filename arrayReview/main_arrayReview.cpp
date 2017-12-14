@@ -29,62 +29,52 @@ int main()
 		{ 10,53,12 },
 		{ 31,14,15 } };
 
-	char p;
-	int sum, rowToSum, rowToGetLargest, columnToGetLargest;
+	char p, cont;
+	int sum, rowToSum, rowToGetLargest, columnToGetLargest, choyz;
 	int theList[NUM_ROW];
 	double arrayAverage, sumRow, largestElementRow, largestElementColumn;
 
-	rowToSum = 2;
-	dispArray(multiDimList, NUM_ROW);
-	sumRow = sumByRow(multiDimList, rowToSum);
-	cout << endl;
-	cout << "the sum of row " << rowToSum << " is = " << sumRow;
-
-	cout << endl << endl;
-	cout << "the sum of individual rows:";
-	cout << endl;
-	getSumEachRow(multiDimList, NUM_ROW);
 	
-	cout << endl;
-	cout << "the sum of individual columns";
-	getSumOfIndividualColumn(multiDimList, NUM_ROW);
-
-	cout << endl;
-	cout << "================================" << endl;
-	//display matrix
-	dispArray(list_two, NUM_ROW);
-	cout << "================================" << endl;
-	// get user input on what row to find the largest row element
-	cout << "Find the largest element in any row" << endl;
-	cout << "Enter row number [1-5]: ";
-	cin >> rowToGetLargest;
-	// get lartest row element
-	largestElementRow = getLargestRowElement(list_two, NUM_ROW, rowToGetLargest - 1);
-	// print message of the largest element on the chosen row
-	cout << "Largest element in row " << rowToGetLargest << " is = " << largestElementRow << endl;
-
-	// largest column element
-	cout << endl;
-	cout << "Find the largest element in any column" << endl;
-	cout << "Enter column number [1-3]: ";
-	cin >> columnToGetLargest;
-	// get largest column
-	largestElementColumn = getLargestColumnElement(list_two, NUM_ROW, columnToGetLargest -1);
-	// print message of the largest element on the chosen column
-	cout << "Largest element in column " << columnToGetLargest << " is = " << largestElementColumn << endl;
-
-	cout << endl;
-	// display all largest element in each row and column
-	cout << "Largest element in all row:" << endl;
-	getLargestElementEachRow(list_two, NUM_ROW);
-	cout << endl;
-	cout << "Largest element in all column:" << endl;
-	getLargestElementEachColumn(list_two, NUM_ROW);
+	do {
+		cout << " ------ M E N U ------ " << endl;
+		cout << "(1) Sum Of Rows / Columns" << endl;
+		cout << "(2) Largest Element" << endl;
+		cout << "Enter Your Choice: ";
+		cin >> choyz;
+		switch (choyz) {			
+		case 1: {  // ****** sum of rows / column **********
+			cout << "-------------------------" << endl;
+			cout << "TOTAL ROWS / COLUMN" << endl;
+			execute_sum_of_rows_column(multiDimList, NUM_ROW);
+			break;
+		}
+		case 2: {  // ******* largest element *********
+			cout << "------------------------" << endl;
+			cout << "LARGEST ELEMENT" << endl;		
+			execute_largest_element(list_two, NUM_ROW);
+			break;
+		}
+		default:
+			break;
+		}
+		cout << endl;
+		cout << "C-O-N-T-I-N-U-E <Y/N> -->  ";
+		cin >> cont; 
+		cout << endl << endl;
+	} while (cont != 'n' && cont != 'N');
 
 
-	cout << endl;
-	cout << "press any key! " << endl;
-	cin >> p;
+
+
+
+
+	
+
+	// **********sequential / linear search *********
+
+
+
+
     return 0;
 }
 

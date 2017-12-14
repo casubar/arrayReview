@@ -39,14 +39,14 @@ double listAverage(int myList[], int size) {
 	average = sum / size;
 	return average;
 }
-
+// ********************* SUM OF ROWS / COLUMN *****************************
 // get sum by row
 double sumByRow(int myList[][COL_SIZE], int rowToGetSum) {
 	double sum;
 
 	sum = 0;
 	for (int col = 0; col < COL_SIZE; col++) {
-		sum = sum + myList[rowToGetSum][col];
+		sum = sum + myList[rowToGetSum - 1][col];
 	}
 	return sum;
 }
@@ -126,7 +126,25 @@ double checkColTwo(int myList[][COL_SIZE], int numOfRows) {
 	return sumColTwo;
 }
 
-//=====================================================================================
+// execute sum of rows and column 
+void execute_sum_of_rows_column(int myList[][COL_SIZE], int numOfRows) {
+	int rowToSum, sumRow;
+	
+	// display table
+	std::cout << "================================" << std::endl;
+	dispArray(myList, numOfRows);
+	std::cout << "================================" << std::endl;
+	std::cout << "Get the total of row number: ";
+	std::cin >> rowToSum;
+	sumRow = sumByRow(myList, rowToSum);
+	std::cout << "Sum of row " << rowToSum << " is = " << sumRow << std::endl << std::endl;
+	std::cout << "The sum of individual rows:" << std::endl;
+	getSumEachRow(myList, numOfRows); std::cout << std::endl;
+	std::cout << "The sum of individual columns"; std::cout << std::endl;
+	getSumOfIndividualColumn(myList, numOfRows); std::cout << std::endl;
+}
+
+// ******************** LARGEST ELEMENT *************************
 
 // largest element in the individual column
 double getLargestColumnElement(int myList[][COL_SIZE], int numOfRows, int colToFind) {
@@ -135,10 +153,10 @@ double getLargestColumnElement(int myList[][COL_SIZE], int numOfRows, int colToF
 	temp = 0;
 	for (int row = 0; row < numOfRows; row++) {
 		// is myList[row][col] > myList[row + 1][0] && myList[row][col] >= temp
-		if (myList[row][colToFind] > myList[row + 1][colToFind] && myList[row][colToFind] >= temp) {
+		if (myList[row][colToFind -1] > myList[row + 1][colToFind - 1] && myList[row][colToFind - 1] >= temp) {
 			// if true
 			// temp = myList[row][col]
-			temp = myList[row][colToFind];
+			temp = myList[row][colToFind - 1];
 		}
 	}
 	return temp;	
@@ -193,19 +211,73 @@ void getLargestElementEachColumn(int myList[][COL_SIZE], int numOfRows) {
 	}
 }
 
+// execute largest element
+void execute_largest_element(int myList[][COL_SIZE], int numOfRows) {
+	int rowToGetLargest, largestElementRow, columnToGetLargest, largestElementColumn;
+	char disp_All;
+	
+	// display table
+	std::cout << "================================" << std::endl;
+	dispArray(myList, numOfRows);
+	std::cout << "================================" << std::endl;
+	
+	// get user input on what row to find the largest row element
+	std::cout << "What row number [1-5] to get the largest element: ";
+	std::cin >> rowToGetLargest;
+	
+	// validate row number
+	while (rowToGetLargest < 0  || rowToGetLargest > 5) {
+		std::cout << "E R R O R !!! Number out of range!" << std::endl;
+		std::cout << "Row number [1-5]: ";
+		std::cin >> rowToGetLargest;
+	}
+
+	// get largest element in the row
+	largestElementRow = getLargestRowElement(myList, numOfRows, rowToGetLargest - 1);
+	// print message of the largest element on the chosen row
+	std::cout << "Largest element in row " << rowToGetLargest << " is = " << largestElementRow; std::cout << std::endl;
+	
+	// get largest element in the column
+	std::cout << std::endl;
+	std::cout << "What column number [1-3] to get the largest element: ";
+	std::cin >> columnToGetLargest;
+
+	// validate column number
+	while (columnToGetLargest < 0 || columnToGetLargest > 3) {
+		std::cout << "E R R O R !!! Number out of range!" << std::endl;
+		std::cout << "Column number [1-3]: ";
+		std::cin >> columnToGetLargest;
+	}
+
+	largestElementColumn = getLargestColumnElement(myList, numOfRows, columnToGetLargest);
+	std::cout << "Largest element in column " << columnToGetLargest << " is = " << largestElementColumn << std::endl;
+	std::cout << std::endl;
+
+	// display all largest element in each row and column
+	std::cout << "Display all largest element in each row and column? <Y/N> ==>";
+	std::cin >> disp_All;
+	if (disp_All == 'y' || disp_All == 'Y') {
+		std::cout << std::endl;
+		std::cout << "Largest element in all row:" << std::endl;
+		getLargestElementEachRow(myList, numOfRows); std::cout << std::endl;
+		std::cout << "Largest element in all column:" << std::endl;
+		getLargestElementEachColumn(myList, numOfRows);
+	}
+}
+
 //=====================================================================================
 
 // searching
 
 // sequential / linear search
-int seqSearch(const int myList[], int listSize, int searchItem) {
+int seqSearch(const int myList[][COL_SIZE], int numOfRows, int numToSearch, int colToSearch) {
 	bool found;
 	int loc;
 
 	found = false;
 	loc = 0;
-	while (loc < listSize && !found) {
-		if (myList[loc] == searchItem) {
+	while (loc < numOfRows && !found) {
+		if (myList[loc][colToSearch] == numToSearch) {
 			found = true;
 		}
 		else {
