@@ -22,6 +22,8 @@ int secondList_test[][NUM_COL] = {
 { 10,53,12 },
 { 31,14,15 } };
 
+int thirdList_test[NUM_ROW] = 
+{52,23,34,65,86};
 
 
 namespace UnitTest1_arrayReview
@@ -80,6 +82,6 @@ namespace UnitTest1_arrayReview
 		TEST_METHOD(check_largest_row_element_4) {
 			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 4), 31.0);
 		}
-		
+	
 	};
 }

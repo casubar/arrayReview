@@ -43,3 +43,7 @@ void getLargestElementEachRow(int myList[][COL_SIZE], int numOfRows);
 // largest element in each column
 void getLargestElementEachColumn(int myList[][COL_SIZE], int numOfRows);
 
+//=====================================================================================
+// sequential/linear search
+int seqSearch(const int myList[], int listSize, int searchItem);
+

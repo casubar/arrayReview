@@ -197,8 +197,28 @@ void getLargestElementEachColumn(int myList[][COL_SIZE], int numOfRows) {
 
 // searching
 
-// sequential search
+// sequential/linear search
+int seqSearch(const int myList[], int listSize, int searchItem) {
+	bool found;
+	int loc;
 
+	found = false;
+	loc = 0;
+	while (loc < listSize && !found) {
+		if (myList[loc] == searchItem) {
+			found = true;
+		}
+		else {
+			loc++;
+		}
+	}
+	if (found) {
+		return loc;
+	}
+	else {
+		return -1;
+	}
+}
 
 
 
