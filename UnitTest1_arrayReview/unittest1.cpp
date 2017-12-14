@@ -82,6 +82,9 @@ namespace UnitTest1_arrayReview
 		TEST_METHOD(check_largest_row_element_4) {
 			Assert::AreEqual(getLargestRowElement(secondList_test, NUM_ROW, 4), 31.0);
 		}
+		TEST_METHOD(check_seq_search) {
+			Assert::AreEqual(seqSearch(thirdList_test, NUM_ROW, 65), 3);
+		}
 	
 	};
 }
