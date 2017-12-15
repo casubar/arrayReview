@@ -39,10 +39,12 @@ int main()
 		cout << " ------ M E N U ------ " << endl;
 		cout << "(1) Sum Of Rows / Columns" << endl;
 		cout << "(2) Largest Element" << endl;
+		cout << "(3) Search Any Number In The Table" << endl;
+		cout << "(0) E X I T" << endl;
 		cout << "Enter Your Choice: ";
 		cin >> choyz;
 		switch (choyz) {			
-		case 1: {  // ****** sum of rows / column **********
+		case 1: {  // ****** sum of rows / column *******
 			cout << "-------------------------" << endl;
 			cout << "TOTAL ROWS / COLUMN" << endl;
 			execute_sum_of_rows_column(multiDimList, NUM_ROW);
@@ -53,6 +55,14 @@ int main()
 			cout << "LARGEST ELEMENT" << endl;		
 			execute_largest_element(list_two, NUM_ROW);
 			break;
+		}
+		case 3: {  // **** sequential / linear search ****
+			cout << "Search any number from the table" << endl;
+			execute_seq_search(list_two, NUM_ROW);
+			break;
+		}				
+		case 0: {
+			return 0;
 		}
 		default:
 			break;
@@ -70,7 +80,6 @@ int main()
 
 	
 
-	// **********sequential / linear search *********
 
 
 
