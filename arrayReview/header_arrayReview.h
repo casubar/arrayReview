@@ -52,3 +52,21 @@ void execute_largest_element(int myList[][COL_SIZE], int numOfRows);
 int seqSearch(const int myList[][COL_SIZE], int numOfRows, int numToSearch, int colToSearch);
 // execute linear search
 void execute_seq_search(int myList[][COL_SIZE], int num_of_rows);
+
+// ************************* FIBER LOSS TESTER ********************
+// get fiber loss
+double get_fiber_loss();
+// get fiber limit
+double get_fiber_limit();
+// get margin
+double get_fiber_margin();
+// get length
+double get_fiber_length();
+// get length limit
+double get_length_limit();
+// get margin value
+double get_margin_value(double fiber_loss, double fiber_limit);
+// get margin result pass/fail
+int get_margin_result(double fiber_loss, double fiber_limit);
+// execute fiber margin
+void execute_fiber_margin();

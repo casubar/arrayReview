@@ -40,6 +40,7 @@ int main()
 		cout << "(1) Sum Of Rows / Columns" << endl;
 		cout << "(2) Largest Element" << endl;
 		cout << "(3) Search Any Number In The Table" << endl;
+		cout << "(4) Fiber Loss Tester" << endl;
 		cout << "(0) E X I T" << endl;
 		cout << "Enter Your Choice: ";
 		cin >> choyz;
@@ -60,7 +61,14 @@ int main()
 			cout << "Search any number from the table" << endl;
 			execute_seq_search(list_two, NUM_ROW);
 			break;
-		}				
+		}	
+		case 4: { // *** fiber loss tester ***
+			cout << "---------------------" << endl;
+			cout << "Fiber Loss Tester" << endl;
+			cout << "---------------------" << endl;
+			execute_fiber_margin();
+			break;
+		}
 		case 0: {
 			return 0;
 		}
