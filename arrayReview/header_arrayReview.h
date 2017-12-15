@@ -50,4 +50,5 @@ void execute_largest_element(int myList[][COL_SIZE], int numOfRows);
 //=====================================================================================
 // sequential/linear search
 int seqSearch(const int myList[][COL_SIZE], int numOfRows, int numToSearch, int colToSearch);
-
+// execute linear search
+void execute_seq_search(int myList[][COL_SIZE], int num_of_rows);

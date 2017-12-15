@@ -265,9 +265,7 @@ void execute_largest_element(int myList[][COL_SIZE], int numOfRows) {
 	}
 }
 
-//=====================================================================================
-
-// searching
+// ********************** SEARCHING **********************
 
 // sequential / linear search
 int seqSearch(const int myList[][COL_SIZE], int numOfRows, int numToSearch, int colToSearch) {
@@ -292,6 +290,40 @@ int seqSearch(const int myList[][COL_SIZE], int numOfRows, int numToSearch, int 
 	}
 }
 
+// execute linear search
+void execute_seq_search(int myList[][COL_SIZE], int num_of_rows) {
+	int number_to_find, col_to_find, number_loc;
+
+	
+	// ask user which column to search
+	// then store column to col_to_find
+	std::cout << "Column to search from [1-3]: ";
+	std::cin >> col_to_find;
+
+	// validate column
+	while (col_to_find < 0 || col_to_find > 3) {
+		std::cout << "Column to search from [1-3]: ";
+		std::cin >> col_to_find;
+	}
+
+	// ask user what number to find
+	// then store number to number_to_find
+	std::cout << "Number to search: ";
+	std::cin >> number_to_find;
+
+	// process seq_search	
+	number_loc = seqSearch(myList, num_of_rows, number_to_find, col_to_find - 1);
+
+	if (number_loc >= 0) {  // if number is found
+		// then print message of the location of the number
+		std::cout << "Location of the number is at column " << col_to_find << " and at row " << number_loc;
+	}
+	else {  // if number is not found
+		// then print message "number not found"
+		std::cout << "Number not found!!" << std::endl;
+	}
+
+}
 
 
 
