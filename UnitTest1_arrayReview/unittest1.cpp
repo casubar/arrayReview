@@ -88,6 +88,16 @@ namespace UnitTest1_arrayReview
 		TEST_METHOD(seq_search_23) {
 			Assert::AreEqual(seqSearch(secondList_test, NUM_ROW, 23, 2), 1);
 		}
+		TEST_METHOD(margin_result_greater_0_less_limit_pass) {
+			Assert::AreEqual(get_margin_result(0.08, 1.5), 1);
+		}
+		TEST_METHOD(margin_result_over_limit_fail) {
+			Assert::AreEqual(get_margin_result(-1.0, 1.5), 0);
+		}
+		TEST_METHOD(margin_less_0_fail) {
+			Assert::AreEqual(get_margin_result(2.0, 1.5), 0);
+		}
+	
 	
 	};
 }

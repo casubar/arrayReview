@@ -325,8 +325,109 @@ void execute_seq_search(int myList[][COL_SIZE], int num_of_rows) {
 
 }
 
+// ************************* FIBER LOSS TESTER ********************
 
+// get fiber loss
+double get_fiber_loss() {
+	double fiber_loss;
 
+	std::cout << "Fiber Loss: ";
+	std::cin >> fiber_loss;
+	return fiber_loss;
+}
+
+// get fiber limit
+double get_fiber_limit() {
+	double fiber_limit;
+
+	std::cout << "Fiber Limit: ";
+	std::cin >> fiber_limit;
+	return fiber_limit;
+}
+
+// get margin
+double get_fiber_margin() {
+	double fiber_margin;
+
+	std::cout << "Fiber Margin: ";
+	std::cin >> fiber_margin;
+	return fiber_margin;
+}
+// get length
+double get_fiber_length() {
+	double fiber_length;
+
+	std::cout << "Fiber Length: ";
+	std::cin >> fiber_length;
+	return fiber_length;
+}
+
+// get length limit
+double get_length_limit() {
+	double length_limit;
+
+	std::cout << "Length Limit: ";
+	std::cin >> length_limit;
+	return length_limit;
+}
+
+// get margin value
+double get_margin_value(double fiber_loss, double fiber_limit) {
+	return fiber_limit - fiber_loss;
+}
+
+// get margin result pass/fail
+int get_margin_result(double fiber_loss, double fiber_limit) {
+	bool result;
+	double fiber_margin;
+
+	result = false;
+	fiber_margin = get_margin_value(fiber_loss, fiber_limit);
+	if (fiber_margin < 0) {  // if margin < 0 then fail
+		return result;
+	}
+	else if (fiber_margin > fiber_limit) { // if margin > limit then fail
+		return result;
+	}
+	else if (fiber_margin > 0 || fiber_margin < fiber_limit) {  // margin > 0 && margin < limit then pass
+		return result = true;
+	}
+}
+
+// execute fiber margin
+void execute_fiber_margin() {
+	double loss, limit, margin, length, length_limit, length_result;
+	int margin_result;
+
+	// get loss
+	loss = get_fiber_loss();
+	// get limit
+	limit = get_fiber_limit();
+	// get margin result
+	margin_result = get_margin_result(loss, limit);
+	// get length
+	length = get_fiber_length();
+	// get length limit
+	length_limit = get_length_limit();
+	
+	std::cout << std::endl;
+	std::cout << "R E S U L T S" << std::endl;
+	std::cout << "------------------" << std::endl;
+	// print length result
+	if (length > length_limit) {
+		std::cout << "Length = FAIL" << std::endl;
+	}
+	else if (length < length_limit) {
+		std::cout << "Length = PASS" << std::endl;
+	}
+	// print margin result
+	if (margin_result == 1) { // pass
+		std::cout << "Fiber test = PASS" << std::endl;
+	}
+	else { // fail
+		std::cout << "Fiber test = FAIL" << std::endl;
+	}
+}
 
 
 //=====================================================================================
