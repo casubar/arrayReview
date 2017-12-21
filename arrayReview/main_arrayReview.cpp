@@ -3,6 +3,8 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <cstring>
+#include <string.h>
 
 #include "header_arrayReview.h"
 
@@ -29,18 +31,35 @@ int main()
 		{ 10,53,12 },
 		{ 31,14,15 } };
 
+	char studentName[21];
+	char myname[20];
+	char yourname[16];
+	char textLine[100];
+
 	char p, cont;
 	int sum, rowToSum, rowToGetLargest, columnToGetLargest, choyz;
 	int theList[NUM_ROW];
+	int len;
 	double arrayAverage, sumRow, largestElementRow, largestElementColumn;
 
-	
+	len = 0;
+	std::cout << "random text:";
+	std::cin.getline(textLine, 100);
+	len = strlen(textLine);
+	for (int  i = 0; i < len; i++) {
+		cout << textLine[i];
+	}
+
+
+
+	std::cout << std::endl;
 	do {
 		cout << " ------ M E N U ------ " << endl;
 		cout << "(1) Sum Of Rows / Columns" << endl;
 		cout << "(2) Largest Element" << endl;
 		cout << "(3) Search Any Number In The Table" << endl;
 		cout << "(4) Fiber Loss Tester" << endl;
+		cout << "(5) Character Array" << endl;
 		cout << "(0) E X I T" << endl;
 		cout << "Enter Your Choice: ";
 		cin >> choyz;
@@ -69,6 +88,11 @@ int main()
 			execute_fiber_margin();
 			break;
 		}
+		case 5: { // *** character arrays ***
+			copy_name(myname, 20);
+			
+			break;
+		}
 		case 0: {
 			return 0;
 		}
@@ -80,17 +104,6 @@ int main()
 		cin >> cont; 
 		cout << endl << endl;
 	} while (cont != 'n' && cont != 'N');
-
-
-
-
-
-
-	
-
-
-
-
 
     return 0;
 }

@@ -1,5 +1,9 @@
 #include "stdafx.h"
 #include <iostream>
+#include <cstring>
+#include <string.h>
+
+#define _CRT_SECURE_NO_WARNINGS
 
 
 const int ROW_SIZE = 5;
@@ -193,7 +197,7 @@ void getLargestElementEachRow(int myList[][COL_SIZE], int numOfRows) {
 		std::cout << std::endl;
 	}
 }
-
+ 
 // largest element in each column
 void getLargestElementEachColumn(int myList[][COL_SIZE], int numOfRows) {
 	double largest;
@@ -428,6 +432,47 @@ void execute_fiber_margin() {
 		std::cout << "Fiber test = FAIL" << std::endl;
 	}
 }
+
+
+// ************ CHARACTER ARRAYS *****************
+void copy_name(char my_name[], int list_size) {
+	int choyz, string_size;
+	std::string Sname;
+	char str1[26];
+
+
+	std::cout << std::endl;
+	std::cout << "------ Character Arrays ------" << std::endl;
+	std::cout << "(1) Copy Name" << std::endl;
+	std::cout << "(2) Name Length" << std::endl;
+	std::cout << "(0) E X I T" << std::endl;
+	std::cout << "Enter Your Choice: ";
+	std::cin >> choyz;
+	switch (choyz) {
+	case 1: { // copy name
+		strcpy_s(my_name, list_size, "skeleton king");
+		for (int list = 0; list < list_size; list++) {
+			std::cout << my_name[list];
+		}
+		break;
+	}
+	case 2: { // name length
+		string_size = strnlen_s("skeleton king", list_size);
+		std::cout << "there are " << string_size << " characters!" << std::endl;
+		std::cout << "soldier name";
+		//std::cin.get(str1, 26);
+		//std::cin.get(my_name, list_size);
+		break;
+	}
+	default:
+		break;
+	}
+	
+	
+
+
+}
+
 
 
 //=====================================================================================

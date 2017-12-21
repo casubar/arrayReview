@@ -53,7 +53,7 @@ int seqSearch(const int myList[][COL_SIZE], int numOfRows, int numToSearch, int 
 // execute linear search
 void execute_seq_search(int myList[][COL_SIZE], int num_of_rows);
 
-// ************************* FIBER LOSS TESTER ********************
+// *********** FIBER LOSS TESTER ********************
 // get fiber loss
 double get_fiber_loss();
 // get fiber limit
@@ -70,3 +70,7 @@ double get_margin_value(double fiber_loss, double fiber_limit);
 int get_margin_result(double fiber_loss, double fiber_limit);
 // execute fiber margin
 void execute_fiber_margin();
+
+
+// ************ CHARACTER ARRAYS *****************
+void copy_name(char my_name[], int list_size);
